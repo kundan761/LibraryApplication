@@ -2,12 +2,32 @@ const Book = require("../model/Book");
 
 exports.getAllBooks = async (req, res) => {
   try {
-    const books = await Book.find();
-    res.status(200).json(books);
+    const { page = 1, limit = 10, status, title, author } = req.query;
+    const query = {};
+    if (status) {
+      query.status = status;
+    }
+    if (title) {
+      query.title = { $regex: title, $options: "i" };
+    }
+    if (author) {
+      query.author = { $regex: author, $options: "i" };
+    }
+    const books = await Book.find(query)
+      .limit(limit * 1)
+      .skip((page - 1) * limit)
+      .exec()
+    const count = await Book.countDocuments(query);
+    res.status(200).json({
+      books,
+      totalPages: Math.ceil(count / limit),
+      currentPage: page,
+    });
   } catch (error) {
-    res.status(500).json({ msg: "Something went wrong" });
+    res.status(500).json({ message: "Something went wrong" });
   }
 };
+
 
 exports.createBook = async (req, res) => {
   try {
