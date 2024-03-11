@@ -20,11 +20,11 @@ exports.updateReview = async (req, res) =>{
     }
 }
 
-exports.deleteBook = async (req, res) =>{
+exports.deleteReview = async (req, res) =>{
     const {reviewId} = req.body;
     try {
         const deletedReview = await Review.findByIdAndDelete({_id:reviewId})
-        res.status(200).json({msg:'Deleted Successfully'});
+        res.status(200).json({msg:'Deleted Successfully', deletedReview});
     } catch (error) {
         res.status(500).json({ msg: "Something went wrong" });
     }
