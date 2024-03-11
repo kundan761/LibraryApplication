@@ -13,7 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-1. Clone the repository: `git clone` <a href=https://github.com/yourusername/personal-library-api.git> https://github.com/yourusername/personal-library-api.git</a>
+1. Clone the repository: `git clone` <a href=https://github.com/kundan761/LibraryApplication.git> https://github.com/kundan761/LibraryApplication.git</a>
 2. Install dependencies: `npm install`
 3. Start the server: `npm run server`
 
