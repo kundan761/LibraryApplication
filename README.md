@@ -13,7 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-1. Clone the repository: `git clone https://github.com/yourusername/personal-library-api.git`
+1. Clone the repository: `git clone` <a href=https://github.com/yourusername/personal-library-api.git> https://github.com/yourusername/personal-library-api.git</a>
 2. Install dependencies: `npm install`
 3. Start the server: `npm run server`
 
@@ -38,8 +38,5 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Authors
 
-- Your Name
+- Kundan Kumar Suraj
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details
